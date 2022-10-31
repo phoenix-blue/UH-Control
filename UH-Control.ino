@@ -67,13 +67,13 @@ int f, g, h = 0;
 void setup() {
   Serial.begin(115200);
   delay(10);
-  pcf.pinMode(P0, INPUT_PULLUP);   //ThemorState Signal
-  pcf.pinMode(P1, INPUT_PULLUP);   //Defrot Signl
+  pcf.pinMode(P0, INPUT_PULLUP);   //ThemoState Signal
+  pcf.pinMode(P1, INPUT_PULLUP);   //Defrost Signal
   pcf.pinMode(P2, INPUT_PULLUP);   //Alarm Signal
 
-  pcf1.pinMode(P0, OUTPUT); //Heat Pump
-  pcf1.pinMode(P1, OUTPUT); //Boiler
-  pcf1.pinMode(P2, OUTPUT); //Water Pump
+  pcf1.pinMode(P0, OUTPUT); //Heat Pump (not used)
+  pcf1.pinMode(P1, OUTPUT); //Boiler (not used)
+  pcf1.pinMode(P2, OUTPUT); //Water Pump (not used)
   pcf1.pinMode(P3, OUTPUT); //Heat Pump
   pcf1.pinMode(P4, OUTPUT); //Boiler
   pcf1.pinMode(P5, OUTPUT); //Water Pump
@@ -219,7 +219,7 @@ void loop() {
         i++;
       }
     }
-    if (i >= 3) {    // for delay off time of biler can be change here 3 to 4,5,6 etc its mean 15 sec will be add
+    if (i >= 3) {    // for delay off time of boiler can be change here 3 to 4,5,6 etc its mean 15 sec will be add
       pcf1.digitalWrite(P4, HIGH);
       h = 0;
       i = 0;
